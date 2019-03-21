@@ -24,6 +24,9 @@ class ViewController: UIViewController {
         LabelB.text = "나도 눌러줭"
         count += 1
         CountLabel.text = String(count)
+        if(count>9){
+        count=0
+        }
     }
     
     @IBAction func ButtonPress(_ sender: Any) {
