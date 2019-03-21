@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var LabelB: UILabel!
     @IBOutlet weak var MyLabel: UILabel!
     var count = 0
+    var click = true
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,10 +23,18 @@ class ViewController: UIViewController {
     @IBAction func buttonpressed(_ sender: Any) {
         MyLabel.text = "A가 눌러졌습니다"
         LabelB.text = "나도 눌러줭"
-        count += 1
         CountLabel.text = String(count)
-        if(count>9){
-        count=0
+        if(count==0){
+            click=true
+        }
+        if(count==10){
+            click=false
+        }
+        if(click==true){
+            count+=1
+        }
+        if(click==false){
+            count-=1
         }
     }
     
